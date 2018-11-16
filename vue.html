@@ -1,0 +1,46 @@
+<script>
+
+// I am learning about getters and setters getters will wait until called to get value
+// Setters will set them when called
+
+    // const info = {
+    //     name: 'Wes',
+    //     address: '3709 praed place',
+    //     town: 'fuquay',
+    //     get myName () {
+    //        return `Hi my name is ${this.name}`
+    //     }
+    // }
+
+        const info = {
+        name: 'Wes',
+        address: '3709 praed place',
+        town: 'fuquay',
+        get myName () {
+           return `Hi my name is ${this.fullName}`
+        },
+        set lastName (last) {
+            this.fullName = `${this.name} ${last}`
+        },
+        fullName: null
+    }
+
+    const clothing = {
+        shoes: 10,
+        hat: 25,
+        tax: .1,
+        get totalBeforeDiscount () {
+            let tempTotal = this.shoes * this.hat
+            let taxes = tempTotal * this.tax
+            return (tempTotal + taxes)
+        },
+        set discountAmount (coupon) {
+          this.discount =  ( 100 - coupon ) / 100
+        },
+        get totalPrice() {
+            return this.totalBeforeDiscount * this.discount
+        }
+
+    }
+
+</script>
